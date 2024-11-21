@@ -217,6 +217,9 @@ body {
     text-align: center;
 
 }
+.letter .finished {
+    pointer-events: none;
+}
 .letters .letter-box {
 width: 55px;
 height: 55px;
