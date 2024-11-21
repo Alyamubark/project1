@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    margin: 20px auto;
+    width: 1200px;
+}
+
+.row {
+    display: flex;
+}
+
+.hr {
+    border: 1px solid #eee;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-info .game-name {
+    flex: 1;
+    text-align: left;
+}
+
+.game-info .category {
+    text-align: right;
+    flex: 1;
+}
+
+.game-info .category span {
+    text-transform: capitalize;
+    color: red;
+    font-weight: bold;
+}
+
+.hangman-draw {
+    flex: 1;
+    background-color: #f8f8f8;
+    padding: 20px;
+    height: 324px;
+   
+   
+}
+
+.hangman-draw .the-draw {
+    width: 60px;
+    height: 280px;
+    border-bottom: 4px solid black;
+    position: relative;
+    margin: auto;
+   /*display: none;*/
+   
+}
+
+.hangman-draw .the-stand {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: black;
+    height: 100%;
+    left: 50%;
+    margin-left: -2px;
+   
+}
+
+.hangman-draw .the-hang::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: black;
+    width: 100px;
+    left: 30px;
+    top: 15px;
+  
+}
+
+.hangman-draw .the-hang::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-color: black;
+    left: 130px;
+    top: 15px;
+   
+   
+}
+
+.hangman-draw .the-rope {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 95px;
+    top: 45px;
+    border: 4px dashed black;
+    
+    
+}
+
+.hangman-draw .the-man .head {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid black;
+    position: absolute;
+    left: 105px;
+    top: 55px;
+   
+}
+
+.hangman-draw .the-man .body {
+    position: absolute;
+    background-color: black;
+    width: 4px;
+    height: 110px;
+    top: 105px;
+    left: 130px;
+   
+}
+
+
+.hangman-draw .the-man .hands::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    top: 140px;
+    left: 85px;
+    transform: rotate(30deg);
+    
+}
+
+.hangman-draw .the-man .hands::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    top: 140px;
+    left: 130px;
+    transform: rotate(-30deg);
+   
+   
+}
+
+
+.hangman-draw .the-man .legs::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    top: 223px;
+    left: 88px;
+    transform: rotate(-30deg);
+   
+   
+}
+
+.hangman-draw .the-man .legs::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    top: 223px;
+    left: 127px;
+    transform: rotate(30deg);
+    
+    
+}
+
+.hangman-draw .wrong-1 .the-draw {
+    display: block;
+}
+
+.hangman-draw .wrong-2 .the-stand {
+    display: block;
+}
+
+.hangman-draw .wrong-3 .the-hang {
+    display: block;
+}
+
+.hangman-draw .wrong-4 .the-rope {
+    display: block;
+}
+
+.hangman-draw .wrong-5 .head {
+    display: block;
+}
+
+.hangman-draw .wrong-6 .body {
+    display: block;
+}
+
+.hangman-draw .wrong-7 .hands {
+    display: block;
+}
+
+.hangman-draw .wrong-8 .legs {
+    display: block;
+}
+
+.letters {
+    flex:1;
+    padding: 15px;
+    text-align: center;
+
+}
+.letters .letter-box {
+width: 55px;
+height: 55px;
+display: inline-block;
+background-color: blueviolet;
+color: white;
+font-size: 24px;
+margin-right: 10px;
+line-height: 55px;
+text-transform: uppercase;
+font-weight: bold;
+cursor: pointer;
+margin-bottom: 10px;
+transition: background-color 0.3s , opacity 0.3s;
+}
+
+.letter-box.clicked {
+    background-color: #333;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.letters-guess {
+ margin: 10px auto;
+background-color: #eee;
+padding: 20px;
+display: flex;
+justify-content: center;
+min-height: 104px;
+
+}
+
+.letters-guess span {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: white;
+    border-bottom: 3px solid black;
+    transition: .3s;
+}
+
+.letters-guess span .with-space {
+background: none;
+border-bottom: none;
+position: relative;
+}
+
+
+.letters-guess span .with-space  ::before {
+    content : '';
+width: 20px;
+height: 4px;
+background-color: blueviolet;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
